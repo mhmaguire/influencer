@@ -1,0 +1,19 @@
+!!!
+%html
+	%head
+		%title TheInfluence
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
+	%body
+		#main.container
+			%header.row
+				%nav
+					=render partial: 'shared/nav'
+			.row
+				.twelve.columns.content
+					= yield
+				%aside.four.columns
+					%h1 Aside
+
+			%footer

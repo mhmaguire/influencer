@@ -1,0 +1,8 @@
+=@influencer.name
+
+%ul.looks
+	-@influencer.looks.each do |l|
+		%li.look
+			=link_to look_path(l) do 
+				=placeholdit "210x400"
+			%p=l.title
