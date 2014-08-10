@@ -10,7 +10,7 @@ class InfluencersController < ApplicationController
 	private
 
 	def load_influencers
-		@influencers ||= influencer_scope.all
+		@influencers ||= influencer_scope.alphabetize
 	end
 
 	def load_influencer

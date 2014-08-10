@@ -1,9 +1,19 @@
-%ul
-	-@influencers.each do |i|
-		%li.row
-			.three.columns.alpha
-				=placeholdit "210x400"
-			.nine.columns.omega
-				-i.attributes.each do |k, v|
-					%p= "#{k} : #{v}" 
-				=link_to i.name, influencer_path(i)
+.influencers.row
+	-letters = "A".."Z"
+	
+	%ul.letter-anchors
+		-letters.each do |l|
+			%li
+				%a(href="#" data-letter="letter-#{l}")= l
+	
+	-letters.each do |letter|
+		%section.letter(id="letter-#{letter}")
+			%h1=letter
+			%a.to-top() ^
+			%ul
+				-if @influencers.has_key?(letter)
+					-@influencers[letter].each do |i|
+						%li
+							=link_to influencer_path(i) do 
+								=placeholdit("153x180")
+							%p=i.name

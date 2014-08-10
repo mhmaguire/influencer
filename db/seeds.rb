@@ -8,7 +8,7 @@
 
 require 'ffaker'
 
-20.times.map { |i|
+200.times.map { |i|
 	Influencer.create(name: Faker::Name.name)
 }.each { |inf|
 	3.times do

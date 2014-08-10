@@ -8,4 +8,8 @@ class Influencer < ActiveRecord::Base
 			medium: "210x400"
 		}
 	end
+
+	def self.alphabetize
+		all.sort_by{ |i| i.name }.group_by{|i| i.name.first }
+	end
 end
