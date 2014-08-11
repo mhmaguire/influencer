@@ -9,11 +9,8 @@
 	-letters.each do |letter|
 		%section.letter(id="letter-#{letter}")
 			%h1=letter
-			%a.to-top() ^
+			%a.to-top ^
 			%ul
 				-if @influencers.has_key?(letter)
-					-@influencers[letter].each do |i|
-						%li
-							=link_to influencer_path(i) do 
-								=placeholdit("153x180")
-							%p=i.name
+					=render partial: 'abc_influencer', collection: @influencers[letter], as: :i
+						

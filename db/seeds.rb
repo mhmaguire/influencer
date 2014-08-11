@@ -8,10 +8,10 @@
 
 require 'ffaker'
 
-200.times.map { |i|
+100.times.map { |i|
 	Influencer.create(name: Faker::Name.name)
 }.each { |inf|
-	3.times do
+	5.times do
 		inf.looks.create(title: Faker::Product.product, body: Faker::Lorem.paragraph)
 	end
 }

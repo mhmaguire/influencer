@@ -58,6 +58,8 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffaker (1.16.1)
+    formtastic (2.3.0.rc3)
+      actionpack (>= 3.0)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -183,6 +185,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker
+  formtastic (~> 2.3.pre.stable)
   haml
   jbuilder (~> 2.0)
   jquery-rails

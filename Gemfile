@@ -36,6 +36,8 @@ gem 'placeholdit'
 
 gem 'skeleton-rails'
 
+gem 'formtastic', '~> 2.3-stable'
+
 group :development do 
 	gem 'meta_request'
 	gem 'quiet_assets'

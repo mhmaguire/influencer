@@ -1,0 +1,8 @@
+=link_to "Back to influencer", admin_influencer_path(@influencer)
+=semantic_form_for [:admin, @influencer], html: {multipart: true} do |f|
+	=f.inputs do 
+		=f.input :name
+	=f.semantic_fields_for :headshot do |j|
+		=j.input :attachment, :label => "Headshot", :hint => f.template.image_tag(j.object.url(:small))
+	=f.actions do 
+		=f.action :submit

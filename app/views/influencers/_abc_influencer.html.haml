@@ -1,0 +1,4 @@
+%li
+	=link_to influencer_path(i) do 
+		=image_tag i.headshot.url(:small) if i.headshot
+	%p=i.name
