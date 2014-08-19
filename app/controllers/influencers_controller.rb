@@ -10,14 +10,14 @@ class InfluencersController < ApplicationController
 	private
 
 	def load_influencers
-		@influencers ||= influencer_scope.alphabetize
+		@influencers ||= influencer_scope.includes(:headshot).alphabetize
 	end
 
 	def load_influencer
-		@influencer ||= influencer_scope.find(params[:id])
+		@influencer ||= influencer_scope.includes(:looks).find(params[:id])
 	end
 
 	def influencer_scope
-		Influencer
+		Influencer.all
 	end
 end
