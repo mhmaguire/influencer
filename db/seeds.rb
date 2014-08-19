@@ -12,17 +12,18 @@ cats = %w(the_latest on_the_street red_carpet airport fashion_week vacation work
 	Category.find_or_create_by(title: cat.gsub('_', ' ').titleize)
 end
 
-100.times.map { |i|
-	Influencer.create(name: Faker::Name.name)
-}.each { |inf|
+50.times do  |i|
+	inf = Influencer.create(name: Faker::Name.name)
 	inf.create_headshot
-	5.times do
+	3.times do
 		l = inf.looks.create(title: Faker::Product.product, body: Faker::Lorem.paragraph, category: cats[rand(cats.size) -1])
+		g = l.product_groups.create(name: "The look")
+		s = l.product_groups.create(name: "Secondary")
+		a = l.product_groups.create(name: "Ancillary")
+		5.times do |i|
+			g.products << Product.create(brand: Faker::Product.brand, model: Faker::Product.product_name, price_cents: rand(10000))
+			s.products << Product.create(brand: Faker::Product.brand, model: Faker::Product.product_name, price_cents: rand(10000))
+			a.products << Product.create(brand: Faker::Product.brand, model: Faker::Product.product_name, price_cents: rand(10000))
+		end
 	end
-}
-
-100.times do |i|
-	Product.create(brand: Faker::Product.brand, model: Faker::Product.product_name, price_cents: rand(10000))
-
 end
-

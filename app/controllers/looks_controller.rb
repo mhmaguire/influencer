@@ -10,14 +10,14 @@ class LooksController < ApplicationController
 	private
 
 	def load_look
-		@look = looks_scope.find(params[:id])
+		@look = looks_scope.includes(:primary_image, product_groups: {products: :image}).find(params[:id])
 	end
 
 	def load_looks
-		@looks = looks_scope.all
+		@looks = looks_scope.to_a
 	end
 
 	def looks_scope
-		Look
+		Look.all
 	end
 end
