@@ -26,4 +26,16 @@
 					%p=p.model
 					%p=p.price_cents
 
+:javascript
+	$(function(){
+		var group = $('.primary_group ul.products');
+		if(group.find('li').length > 3) {
+			$('.primary_group ul.products').slick({
+				slide: "li",
+				infinite: true,
+				slidesToShow: 3,
+				slidesToScroll: 1
+			});
+		}
+	});
 	

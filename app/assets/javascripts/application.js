@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require slick-carousel
 //= require jquery_ujs
 //= require turbolinks
 //= require cocoon
