@@ -1,7 +1,8 @@
 %ul
 	-@looks.each do |l|
 		%li
-			=placeholdit "210x400"
+			=link_to look_path(l) do
+				=placeholdit "210x400"
 			%h3=l.title
 			%p=l.body
 

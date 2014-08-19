@@ -1,12 +1,12 @@
 .row
 	.four.columns.alpha
-		=placeholdit "331x518"
+		=image_tag @look.primary_image.url(:large)
 	.eight.columns.omega
 		.row
 			%h2=@look.title
 			=@look.body
-		-3.times do
-			=placeholdit "186x186"
+		-@look.component_images.each do |c|
+			=image_tag c.url(:medium)
 .row
 	-5.times do 
 		=placeholdit "186x186"

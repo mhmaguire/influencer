@@ -1,11 +1,8 @@
 %ul
 	%li.nav-item
 		=link_to "Influencers", influencers_path	
-	%li.nav-item
-		=link_to "Item", '#'
-	%li.nav-item
-		=link_to "Item", '#'	
-	%li.nav-item
-		=link_to "Item", '#'	
-	%li.nav-item
-		=link_to "Item", '#'	
+	=render partial: 'shared/registration'	
+%ul
+	-Category.all.each do |cat|
+		%li.nav-item
+			=link_to cat.title, by_category_path(cat)

@@ -36,8 +36,8 @@ class Admin::InfluencersController < ApplicationController
 
 	def build_influencer
 		@influencer ||= inf_scope.new
-		@influencer.headshot ||= Headshot.new
 		@influencer.attributes = influencer_params
+		@influencer.headshot ||= Headshot.new
 	end
 
 	def load_influencers

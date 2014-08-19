@@ -1,0 +1,14 @@
+=semantic_form_for [:admin, @look], html: {multipart: true} do |f|
+	
+	=f.inputs name: "Category" do 
+		=f.input :category
+	=f.inputs name: "Influencer" do 
+		=f.input :influencer
+	=f.semantic_fields_for :primary_image do |j|
+		=j.input :attachment, :label => "Primary Image", :hint => f.template.image_tag(j.object.url(:small))
+	=f.semantic_fields_for :product_groups
+	=f.inputs name: "Look" do
+		=f.input :title
+		=f.input :body
+
+	=f.actions

@@ -38,6 +38,12 @@ gem 'skeleton-rails'
 
 gem 'formtastic', '~> 2.3-stable'
 
+gem 'friendly_id', '~> 5.0.0'
+
+gem 'cocoon'
+
+gem 'devise', '~> 3.0.0'
+
 group :development do 
 	gem 'meta_request'
 	gem 'quiet_assets'
