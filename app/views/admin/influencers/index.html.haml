@@ -1,9 +1,0 @@
-.row
-	=link_to "New Influencer", new_influencer_path
-%ul.row.influencers
-	-@influencers.each do |i|
-		%li
-			=link_to admin_influencer_path(i) do
-				=image_tag i.headshot.url(:small)
-			%p= i.name
-

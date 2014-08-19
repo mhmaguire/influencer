@@ -42,7 +42,11 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem 'cocoon'
 
-gem 'devise', '~> 3.0.0'
+gem 'devise', '~> 3.2'
+
+gem 'activeadmin', github: 'activeadmin/active_admin'
+
+# gem "meta_search",    '>= 1.1.0.pre'
 
 group :development do 
 	gem 'meta_request'

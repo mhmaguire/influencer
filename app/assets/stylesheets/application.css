@@ -13,6 +13,9 @@
  *= require base
  *= require layout
  *= require skeleton
- *= require_tree .
+ *= require style
+ *= require influencers
+ *= require pages
+ *= require looks
  *= require_self
  */
