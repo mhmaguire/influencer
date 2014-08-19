@@ -1,0 +1,17 @@
+{
+  "name": "the_influence",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mhmaguire/influencer",
+  "authors": [
+    "Matt Maguire <mhmaguire0@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

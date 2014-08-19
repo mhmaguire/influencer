@@ -16,7 +16,7 @@ ActiveAdmin.register Product do
 
   form html: {multipart: true} do |f|
     f.inputs "Image", for: [:image, f.object.image || Product::Image.new] do |image_form|
-      image_form.input :attachment, :hint => f.template.image_tag(image_form.object.url(:small))
+      image_form.input :attachment, :hint => f.template.image_tag(image_form.object.url(:thumb))
     end
     f.inputs do 
       f.input :model

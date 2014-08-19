@@ -5,8 +5,25 @@
 		.row
 			%h2=@look.title
 			=@look.body
-		-@look.component_images.each do |c|
-			=image_tag c.url(:medium)
-.row
-	-5.times do 
-		=placeholdit "186x186"
+		-@look.primary_product_group.tap do |g|
+			.primary_group.product_group
+				=g.name
+				%ul.products
+					-g.products.each do |p|
+						%li
+							=image_tag p.image.url(:medium)
+							%p=p.brand
+							%p=p.model
+							%p=p.price_cents
+-@look.secondary_product_groups.each do |g|
+	.row.product_group
+		=g.name
+		%ul.products
+			-g.products.each do |p|
+				%li
+					=image_tag p.image.url(:medium)
+					%p=p.brand
+					%p=p.model
+					%p=p.price_cents
+
+	

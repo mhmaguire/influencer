@@ -15,6 +15,6 @@
 #
 
 class Look::PrimaryImage < Image
-	has_attached_file :attachment, styles: {large: "331x518"}, default_url: 'http://placehold.it/331x518'
+	has_attached_file :attachment, styles: {large: "331x518", thumb: '100x100'}, default_url: 'look_image/:style/missing.png'
 	validates_attachment_content_type :attachment, :content_type => /\Aimage\/.*\Z/
 end

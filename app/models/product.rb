@@ -13,8 +13,6 @@
 class Product < ActiveRecord::Base
 	has_one :image, as: :imageable, class_name: "Product::Image"
 	after_create :ensure_image
-	
-
 
 	private 
 

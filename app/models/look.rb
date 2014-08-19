@@ -24,9 +24,18 @@ class Look < ActiveRecord::Base
 
 	after_create :ensure_primary_image
 
-	accepts_nested_attributes_for :primary_image
+	accepts_nested_attributes_for :primary_image, :product_groups
 
 	validates :influencer, :title, :body, :category, presence: true
+
+	def primary_product_group
+		product_groups.first
+	end
+
+	def secondary_product_groups
+		groups = product_groups.to_a
+		groups.size == 1 ? [] : groups.slice(1 .. -1)
+	end
 
 	private
 

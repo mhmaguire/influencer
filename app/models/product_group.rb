@@ -13,4 +13,6 @@ class ProductGroup < ActiveRecord::Base
 	belongs_to :look
 	has_many :items, class_name: "ProductGroup::Item", foreign_key: :group_id
 	has_many :products, through: :items
+
+	accepts_nested_attributes_for :items
 end

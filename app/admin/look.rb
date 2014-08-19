@@ -15,4 +15,29 @@ ActiveAdmin.register Look do
   # end
 
 
+  form html: {multipart: true} do |f|
+    f.inputs do 
+      f.input :influencer
+      f.input :category, as: :radio
+    end
+
+    f.inputs "Primary Image", for: [:primary_image, f.object.primary_image || Look::PrimaryImage.new] do |image_form|
+      image_form.input :attachment, :hint => f.template.image_tag(image_form.object.url(:thumb))
+    end
+
+    f.inputs "Content" do 
+      f.input :title
+      f.input :body
+    end
+
+    f.inputs do 
+      f.has_many :product_groups do |pg|
+        pg.input :name
+        pg.has_many :items do |item_form|
+          item_form.input :product
+        end
+      end
+    end
+    f.actions
+  end
 end
