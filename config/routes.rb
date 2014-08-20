@@ -7,13 +7,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
-  # namespace :admin do 
-  # 	resources :looks
-  # 	resources :influencers do 
-  #     resources :looks
-  #   end
-  # end
-
   resources :looks
   scope :looks do 
   	resources :categories, only: :show, as: :by_category
