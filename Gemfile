@@ -36,7 +36,7 @@ gem 'placeholdit'
 
 gem 'skeleton-rails'
 
-gem 'formtastic', '~> 2.3-stable'
+gem 'formtastic', github: 'justinfrench/formtastic', branch: '2.3-stable'
 
 gem 'friendly_id', '~> 5.0.0'
 
@@ -55,6 +55,9 @@ group :development do
 	gem 'better_errors'
 	gem 'pry'
 	gem 'rails-erd'
+	gem 'capistrano', "~> 3.0.1"
+	gem 'capistrano-rails'
+	gem 'capistrano-bower'
 end
 
 group :development, :test do 
